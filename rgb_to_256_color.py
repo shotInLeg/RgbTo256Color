@@ -289,7 +289,10 @@ def hex_to_rgb(hex_color):
 def rgb_to_hex(rgb_color):
     hex_color = '#'
     for x in rgb_color:
-        hex_color += hex(x)[2:]
+        component = hex(x)[2:]
+        if component == '0':
+            component *= 2
+        hex_color += component
     return hex_color
 
 
@@ -327,7 +330,7 @@ def term256_to_rgb(term256_color):
 
 def rgb_to_term256(rgb_color):
     try:
-        term256 = COLOR_MAPPING.index(best_color)
+        term256 = COLOR_MAPPING.index(rgb_color)
         return term256
     except Exception:
         raise ValueError('RGB color must be from pallete')
