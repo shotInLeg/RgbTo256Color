@@ -1,5 +1,5 @@
 # RgbTo256Color
-[Python] CLI tool to get closest to select color
+[Python] CLI tool to get a color close to the selected one
 
 ## Help
 
